@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/main.css" />
+<div class="row">
+  <div class="col-md-12">
+    <div class="controller">
+      <h2>Posts</h2>
+      <button class="overriden"><a
+          href="/posts/add"
+          class="btn btn-success pull-right"
+        >Add Post</a></button>
+    </div>
+
+    <hr />
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Post ID</th>
+            <th>Title</th>
+            <th>Post Date</th>
+            <th>Category</th>
+            <th>Published</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {{#each posts}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{title}}</td>
+              <td>{{#formatDate postDate}}</td>
+              {{/formatDate}}
+              <td><a
+                  href="/posts?category={{this.category}}"
+                >{{this.category}}</a></td>
+              <td>{{published}}</td>
+              <td><a class="btn btn-danger" href="posts/delete/{{id}}">remove</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    {{#unless posts}}
+      <div class="col-md-12 text-center">
+        <strong>{{message}}</strong>
+      </div>
+    {{/unless}}
+  </div>
+</div>

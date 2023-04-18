@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+
+<body>
+    <h1>Edit Task</h1>
+    <form action="/update/{{todo._id}}" method="POST">
+        <input type="text" name="task" value="{{todo.task}}">
+        <button type="submit" title="Update Task">
+            <i class="fas fa-save"></i>
+        </button>
+    </form>
+
+</body>
+
+</html>

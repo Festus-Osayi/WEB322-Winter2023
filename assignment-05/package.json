@@ -1,0 +1,31 @@
+{
+  "name": "web322-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blog-service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Festus-Osayi/web322-app.git"
+  },
+  "author": "Festus Osayi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Festus-Osayi/web322-app/issues"
+  },
+  "homepage": "https://github.com/Festus-Osayi/web322-app#readme",
+  "dependencies": {
+    "cloudinary": "^1.35.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.4",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.30.0",
+    "streamifier": "^0.1.1",
+    "strip-js": "^1.2.0"
+  }
+}

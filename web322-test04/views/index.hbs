@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <center>
+        <h1>User List</h1>
+    </center>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+             {{#each users}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{formatDate this.created_at}}</td>
+                <td><a href="/update-user?id={{this.id}}">edit</td>
+                <td><a href="/delete-user?id={{this.id}}">delete</td>
+            </tr> {{/each}}
+            <tr>
+                <form method="post" action="/insert-user">
+                    <td>+</td>
+                    <td><input type="text" name="name" placeholder="Name"></td>
+                    <td><input type="email" name="email" placeholder="Email"></td>
+                    <td colspan="3"><button type="submit">Add</button></td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

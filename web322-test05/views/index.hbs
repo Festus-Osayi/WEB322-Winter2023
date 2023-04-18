@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Enter a task">
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul>
+        {{#each todos}}
+        <li>
+            
+            {{#unless completed}}
+            <form action="/complete/{{_id}}" method="POST" style="display:inline;">
+                <button type="submit" title="Complete">
+                    <i class="fas fa-check"></i>
+                </button>
+            </form>
+            <!-- Add these buttons inside the <li> element, after the "Complete" button -->
+            <form action="/edit/{{_id}}" method="GET" style="display:inline;">
+                <button type="submit" title="Edit">
+                    <i class="fas fa-edit"></i>
+                </button>
+            </form>
+            <form action="/delete/{{_id}}" method="POST" style="display:inline;">
+                <button type="submit" title="Delete">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </form>
+            {{/unless}}
+
+            {{task}}
+        </li>
+        {{/each}}
+    </ul>
+    <script>
+       $(document).ready(function () {
+    $('#delete-form').on('submit', function () {
+      return confirm('Are you sure you want to delete this task?')
+    });
+});
+</script>
+    </script>
+</body>
+
+</html>
