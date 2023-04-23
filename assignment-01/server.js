@@ -1,5 +1,11 @@
-/********************************************************************************* * WEB322 – Assignment 1 * I declare that this assignment is my own work in accordance with Seneca Academic Policy. * No part of this assignment has been copied manually or electronically from any other source * (including web sites) or distributed to other students. * * Name: __Festus Osayi____________________ Student ID: __170276216____________ Date: _____18-01-2023___________ * * Online (Cyclic) URL: _______________________________________________________ * ********************************************************************************/
-
+/**************** * WEB322 – Assignment 01 * 
+I declare that this assignment is my own work in accordance with Seneca Academic Policy. 
+No part * of this assignment has been copied manually or electronically from any other source * 
+(including 3rd party web sites) or distributed to other students. 
+* * Name: __Festus Osayi____________________ Student ID: ___170276216___________ Date: ____2-17-2023____________ 
+* * Cyclic Web App URL: _https://zany-gold-dove-tam.cyclic.app_____________________
+* * GitHub Repository URL: _____________________https://github.com/Festus-Osayi/web322-app
+* ********************************************************************************/
 const express = require('express')
 const HTTP_PORT = process.env.port || 8080
 const app = express()
